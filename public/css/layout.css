@@ -23,14 +23,6 @@ a.btn1{ padding:15px 30px; border-right:1px #000000 solid; }
 .headbtnTxt1 { color:#FFFFFF; }
 .headbtnTxt2 { color:#FFFF00; }
 
-.dropdown { float: left; overflow: hidden; }
-.dropdown .dropbtn { font-size: 16px; border: none; outline: none; color: white; padding: 14px 16px; background-color: inherit; font-family: inherit; margin: 0; }
-.navbar a:hover, .dropdown:hover .dropbtn { background-color: red; }
-.dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; }
-.dropdown-content a { float: none; color: black; padding: 12px 16px; text-decoration: none; display: block; text-align: left; }
-.dropdown-content a:hover { background-color: #ddd; }
-.dropdown:hover .dropdown-content { display: block; }
-
 /* 首頁版身-全幅圖片區 */
 .index-ad { width:100%; }
 .index-ad img { width:100%;  border-bottom:2px #2e2e2e solid; height:auto; }
@@ -140,6 +132,28 @@ box-shadow:0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
 .MsgDefBorder { border:1px #CACECE solid; } /* 預設框線顏色 */
 .MsgErrBorder { border:1px #FF287E solid; } /* 錯誤框線顏色 */
 
+/* 表格式瀏覽 */
+.tab2{border:1px #727272 solid; width:100%;margin-top:10px;}
+.tab2 td{padding:5px;}
+.tab2tit{background:#0066FF;color:#fff;text-align:center;}
 
+/* 瀏覽按鈕 */
+a.btn-vi { background:#0066FF; color:#FFFFFF; text-align:center; font-size:12pt; padding:3px 3px; border-radius:5px;cursor:pointer; border:none; font-family:微軟正黑體;}
+a:hover.btn-vi { background:#4D94FF; }
+tr:nth-child(even) {background: #CCC}
 
+/* 刪除按鈕 */
+a.btn-del { background:#C40000; color:#FFFFFF; text-align:center; font-size:12pt; padding:3px 3px; border-radius:5px;cursor:pointer; border:none; font-family:微軟正黑體;}
+a:hover.btn-del { background:#D54D4D; }
 
+/* 詢問視窗 */
+#MsgYesNo{z-index:2001; position:fixed;width:400px;height:200px;top:50%;left:50%;margin-top:-100px;margin-left:-200px;background:#FFF;border-radius:5px; border:5px solid #a10000; box-shadow:0px 0px 10px #000;display:none;}
+#MsgYesNo .MsgArea{margin:10px;}
+#MsgYesNo .tit{font-size:17pt;color:#0066FF;padding-bottom:5px;border-bottom:1px solid #727272;} 
+#MsgYesNo .imgs{float:left;height:70px;margin-right:10px;}
+#MsgYesNo .msg{height:110px;line-height:30px;padding:5px 0px 0px 10px;}
+#MsgYesNo .btn {text-align:right;}
+#MsgYesNo a.btnYes{padding:5px 15px; background:#0066FF;color:#FFF;border-radius: 5px 5px 5px 5px;cursor:pointer;}
+#MsgYesNo a:hover.btnYes{background:#3384FF;}
+#MsgYesNo a.btnNo{padding:5px 15px; background:#C40000;color:#FFF;border-radius: 5px 5px 5px 5px;cursor:pointer;}
+#MsgYesNo a:hover.btnNo{background:#CF3333;}

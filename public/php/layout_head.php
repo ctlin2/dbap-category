@@ -32,16 +32,38 @@
 	<!-- 子選單開始 -->
 		<li>
 			<a title="產品介紹" class="btn1" href="prolist.php">產品介紹</a>
-				<div class="headBtn-items">
-					<div><a title="產品類別 1" href="prolist.php">產品類別 1</a></div>
-					<div><a title="產品類別 2" href="prolist.php">產品類別 2</a></div>
-				</div>
+			<div class="headBtn-items">
+			<?php 
+				require("php/cmsdb.php");
+				$sql = "SELECT * FROM categories ORDER BY id"; 
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) {
+					// 每筆記錄的輸出資料
+					while($row = $result->fetch_assoc()) {
+					    echo '<div><a href="list_product.php?cat='.$row["id"].'">'.$row["name"].'</a></div>';
+					}
+				} else {
+					echo '<div><a href="list_product.php">產品類別</a></div>';
+				}
+				$conn->close();
+			?>
+			</div>
 		</li>
 	<!-- 子選單結束 -->
 		<li><a title="產品QA" class="btn1" href="qalist.php">產品QA</a></li>
 		<li><a title="最新消息" class="btn1" href="news.php">最新消息</a></li>
 		<li><a title="加入會員" class="btn1" href="member.php">加入會員</a></li>
 		<li><a title="聯絡我們"class="btn1" href="contact.php">聯絡我們</a></li>
+		<li><a title="登入" class="btn1" href="login.php">登入</a></li>
+        <!-- 後台管理子選單開始 -->
+		<li>
+			<a title="後台管理" class="btn1" href="#">後台管理</a>
+			<div class="headBtn-items">
+                <a href="new_product.php">新增產品</a>
+                <a href="new_category.php">新增產品類別</a>
+            </div>
+		</li>
+        <!-- 後台管理子選單結束 -->
 	</div><!-- headBtn End -->
 </div><!-- headBtnArea End -->
 <!-- 按鈕列結束 -->
