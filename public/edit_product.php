@@ -45,9 +45,28 @@
                 <li class="L">
                 <label for="category">產品類別:</label>
                 <select id="category" name="category_id">
-                    <option value="1"<?php if ($category_id == 1) echo ' selected'; ?>>電腦</option>
-                    <option value="2"<?php if ($category_id == 2) echo ' selected'; ?>>手機</option>
-                    <option value="3"<?php if ($category_id == 3) echo ' selected'; ?>>週邊設備</option>
+                <?php 
+                    include("php/cmsdb.php");
+                    $sql = "SELECT * FROM categories ORDER BY id"; 
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) { 
+                        // 每筆記錄的輸出資料
+                        while($row = $result->fetch_assoc()) {  
+                ?>
+                        <option value="<?php echo $row["id"]; ?>"
+                        <?php if ($category_id == $row["id"]) echo ' selected'; ?>>
+                        <?php echo $row["name"]; ?>
+                        </option>
+                <?php 
+                        }
+                    }
+                    else {
+                ?>
+                        <option value="0">產品類別</option>
+                <?php
+                    }
+                    $conn->close();
+                ?>
                 </select>
                 <li class="L">
                     出品年份：<input type="text" id="modelYear" class="chkval chkolnynum" name="model_year" 

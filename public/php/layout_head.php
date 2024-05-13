@@ -61,6 +61,7 @@
 			<div class="headBtn-items">
                 <a href="new_product.php">新增產品</a>
                 <a href="new_category.php">新增產品類別</a>
+				<a href="list_category.php">產品類別清單</a>
             </div>
 		</li>
         <!-- 後台管理子選單結束 -->
